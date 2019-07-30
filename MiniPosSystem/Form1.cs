@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MiniPosSystem
 {
-    public partial class Form1 : Form
+    public partial class frmOrder : Form
     {
-        public Form1()
+        public frmOrder()
         {
             InitializeComponent();
         }
@@ -55,6 +55,21 @@ namespace MiniPosSystem
             MessageBox.Show(successMessage);
 
             PopulateProductsList();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
