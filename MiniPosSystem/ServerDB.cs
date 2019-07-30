@@ -26,11 +26,11 @@ namespace MiniPosSystem
         /// </summary>
         /// <param name="newServer"></param>
         /// <returns></returns>
-        public static Server AddServer(Server newServer)
+        public static Servers AddServer(Servers newServer)
         {
             using (var context = new OurRestaurantModel())
             {
-                context.Products.Add(newServer);
+                context.Servers.Add(newServer);
                 context.SaveChanges();
 
                 return newServer;
