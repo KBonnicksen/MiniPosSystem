@@ -19,7 +19,7 @@ namespace MiniPosSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PopulateProductsList();
+            //PopulateProductsList();
 
             PopulateServers();
         }
@@ -38,10 +38,8 @@ namespace MiniPosSystem
         /// Populates comboBox on form with product names from the 
         /// database
         /// </summary>
-        private void PopulateProductsList()
+        private void PopulateProductsList(List<Products> products)
         {
-            List<Products> products = ProductDb.GetProducts();
-
             lstProducts.DataSource = products;
 
             lstProducts.DisplayMember = nameof(Products.Name);
@@ -55,6 +53,7 @@ namespace MiniPosSystem
         /// <param name="e"></param>
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            /*
             Products newProduct = new Products()
             {
                 Name = "Margarita Pizza",
@@ -65,7 +64,26 @@ namespace MiniPosSystem
             string successMessage = $"Added {newProduct.Id}: {newProduct.Name}: {newProduct.Price}";
             MessageBox.Show(successMessage);
 
-            PopulateProductsList();
+            PopulateProductsList();*/
+        }
+
+        private void BtnBeverages_Click(object sender, EventArgs e)
+        {
+            List<Products> beverages = ProductDb.GetBeverages();
+            PopulateProductsList(beverages);
+
+        }
+
+        private void BtnEntrees_Click(object sender, EventArgs e)
+        {
+            List<Products> entrees = ProductDb.GetEntrees();
+            PopulateProductsList(entrees);
+        }
+
+        private void BtnDesserts_Click(object sender, EventArgs e)
+        {
+            List<Products> desserts = ProductDb.GetDesserts();
+            PopulateProductsList(desserts);
         }
     }
 }

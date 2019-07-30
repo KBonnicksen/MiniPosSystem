@@ -25,6 +25,36 @@ namespace MiniPosSystem
             }  
         }
 
+        public static List<Products> GetBeverages()
+        {
+            using (var context = new OurRestaurantModel())
+            {
+                List<Products> beverages = context.Products.Where(p => p.Category == "Beverage").ToList();
+
+                return beverages;
+            }
+        }
+
+        public static List<Products> GetEntrees()
+        {
+            using (var context = new OurRestaurantModel())
+            {
+                List<Products> entrees = context.Products.Where(p => p.Category == "Entree").ToList();
+
+                return entrees;
+            }
+        }
+
+        public static List<Products> GetDesserts()
+        {
+            using (var context = new OurRestaurantModel())
+            {
+                List<Products> desserts = context.Products.Where(p => p.Category == "Dessert").ToList();
+
+                return desserts;
+            }
+        }
+
 
         /// <summary>
         /// Adds new product object to database
