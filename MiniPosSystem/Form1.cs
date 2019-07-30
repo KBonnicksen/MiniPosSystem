@@ -17,10 +17,21 @@ namespace MiniPosSystem
             InitializeComponent();
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             PopulateProductsList();
+
+            PopulateServers();
+        }
+
+        /// <summary>
+        /// Populates the server combo box with the first name of every server
+        /// </summary>
+        private void PopulateServers()
+        {
+            List<Servers> servers = ServerDB.GetServers();
+            cboServer.DataSource = servers;
+            cboServer.DisplayMember = nameof(Servers.FirstName);
         }
 
         /// <summary>
@@ -31,9 +42,9 @@ namespace MiniPosSystem
         {
             List<Products> products = ProductDb.GetProducts();
 
-            cboProducts.DataSource = products;
+            lstProducts.DataSource = products;
 
-            cboProducts.DisplayMember = nameof(Products.Name);
+            lstProducts.DisplayMember = nameof(Products.Name);
         }
 
         /// <summary>
@@ -55,21 +66,6 @@ namespace MiniPosSystem
             MessageBox.Show(successMessage);
 
             PopulateProductsList();
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -98,7 +98,6 @@
             this.btnDesserts.TabIndex = 5;
             this.btnDesserts.Text = "Desserts";
             this.btnDesserts.UseVisualStyleBackColor = true;
-            this.btnDesserts.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btnEntrees
             // 
@@ -108,7 +107,6 @@
             this.btnEntrees.TabIndex = 6;
             this.btnEntrees.Text = "Entrees";
             this.btnEntrees.UseVisualStyleBackColor = true;
-            this.btnEntrees.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btnBeverages
             // 
@@ -118,7 +116,6 @@
             this.btnBeverages.TabIndex = 7;
             this.btnBeverages.Text = "Beverages";
             this.btnBeverages.UseVisualStyleBackColor = true;
-            this.btnBeverages.Click += new System.EventHandler(this.Button3_Click);
             // 
             // lstProducts
             // 
