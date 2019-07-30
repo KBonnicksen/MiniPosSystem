@@ -11,18 +11,18 @@ namespace MiniPosSystem
     /// </summary>
     class ProductDb
     {
-
         /// <summary>
         /// Returns all products from the database
         /// </summary>
         /// <returns></returns>
         public static List<Products> GetProducts()
         {
-            var db = new OurRestaurantModel();
+            using (var context = new OurRestaurantModel())
+            {
+                List<Products> products = context.Products.ToList();
 
-            List<Products> products = db.Products.ToList();
-
-            return products;
+                return products;
+            }  
         }
 
 
