@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Beverages.cs" />
+    <Compile Include="Desserts.cs" />
+    <Compile Include="Entrees.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

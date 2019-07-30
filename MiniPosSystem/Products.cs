@@ -28,5 +28,11 @@ namespace MiniPosSystem
         /// The price of the associated product
         /// </summary>
         public decimal Price { get; set; }
+
+        /// <summary>
+        /// The type of this product 
+        /// Ex. Dessert, Entree, Beverage
+        /// </summary>
+        public string Category { get; set; }
     }
 }

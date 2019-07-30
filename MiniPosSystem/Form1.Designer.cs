@@ -46,7 +46,7 @@
             // btnAddProduct
             // 
             this.btnAddProduct.Location = new System.Drawing.Point(1100, 434);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(81, 57);
             this.btnAddProduct.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.cboProducts.FormattingEnabled = true;
             this.cboProducts.Location = new System.Drawing.Point(1100, 376);
-            this.cboProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboProducts.Margin = new System.Windows.Forms.Padding(4);
             this.cboProducts.Name = "cboProducts";
             this.cboProducts.Size = new System.Drawing.Size(81, 24);
             this.cboProducts.TabIndex = 1;
@@ -98,7 +98,7 @@
             this.btnDesserts.TabIndex = 5;
             this.btnDesserts.Text = "Desserts";
             this.btnDesserts.UseVisualStyleBackColor = true;
-            this.btnDesserts.Click += new System.EventHandler(this.Button1_Click);
+            this.btnDesserts.Click += new System.EventHandler(this.BtnDesserts_Click);
             // 
             // btnEntrees
             // 
@@ -108,7 +108,7 @@
             this.btnEntrees.TabIndex = 6;
             this.btnEntrees.Text = "Entrees";
             this.btnEntrees.UseVisualStyleBackColor = true;
-            this.btnEntrees.Click += new System.EventHandler(this.Button2_Click);
+            this.btnEntrees.Click += new System.EventHandler(this.BtnEntrees_Click);
             // 
             // btnBeverages
             // 
@@ -118,7 +118,7 @@
             this.btnBeverages.TabIndex = 7;
             this.btnBeverages.Text = "Beverages";
             this.btnBeverages.UseVisualStyleBackColor = true;
-            this.btnBeverages.Click += new System.EventHandler(this.Button3_Click);
+            this.btnBeverages.Click += new System.EventHandler(this.BtnBeverages_Click);
             // 
             // lstProducts
             // 
@@ -181,7 +181,7 @@
             this.Controls.Add(this.lblProductsList);
             this.Controls.Add(this.cboProducts);
             this.Controls.Add(this.btnAddProduct);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmOrder";
             this.Text = "Order Form";
             this.Load += new System.EventHandler(this.Form1_Load);

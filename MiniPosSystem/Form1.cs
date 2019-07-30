@@ -17,23 +17,32 @@ namespace MiniPosSystem
             InitializeComponent();
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            PopulateProductsList();
+            //PopulateProductsList();
+
+            PopulateServers();
+        }
+
+        /// <summary>
+        /// Populates the server combo box with the first name of every server
+        /// </summary>
+        private void PopulateServers()
+        {
+            List<Servers> servers = ServerDB.GetServers();
+            cboServer.DataSource = servers;
+            cboServer.DisplayMember = nameof(Servers.FirstName);
         }
 
         /// <summary>
         /// Populates comboBox on form with product names from the 
         /// database
         /// </summary>
-        private void PopulateProductsList()
+        private void PopulateProductsList(List<Products> products)
         {
-            List<Products> products = ProductDb.GetProducts();
+            lstProducts.DataSource = products;
 
-            cboProducts.DataSource = products;
-
-            cboProducts.DisplayMember = nameof(Products.Name);
+            lstProducts.DisplayMember = nameof(Products.Name);
         }
 
         /// <summary>
@@ -44,6 +53,7 @@ namespace MiniPosSystem
         /// <param name="e"></param>
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            /*
             Products newProduct = new Products()
             {
                 Name = "Margarita Pizza",
@@ -54,22 +64,26 @@ namespace MiniPosSystem
             string successMessage = $"Added {newProduct.Id}: {newProduct.Name}: {newProduct.Price}";
             MessageBox.Show(successMessage);
 
-            PopulateProductsList();
+            PopulateProductsList();*/
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnBeverages_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
+            List<Products> beverages = ProductDb.GetBeverages();
+            PopulateProductsList(beverages);
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void BtnEntrees_Click(object sender, EventArgs e)
         {
+            List<Products> entrees = ProductDb.GetEntrees();
+            PopulateProductsList(entrees);
+        }
 
+        private void BtnDesserts_Click(object sender, EventArgs e)
+        {
+            List<Products> desserts = ProductDb.GetDesserts();
+            PopulateProductsList(desserts);
         }
     }
 }
