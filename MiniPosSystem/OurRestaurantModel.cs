@@ -17,6 +17,7 @@ namespace MiniPosSystem
         public OurRestaurantModel()
             : base("name=OurRestaurantModel")
         {
+            Database.SetInitializer<OurRestaurantModel>(new RestaurantDBInitializer());
         }
 
         // code first tutorial : https://www.entityframeworktutorial.net/code-first/simple-code-first-example.aspx

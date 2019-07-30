@@ -67,6 +67,7 @@
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantDBInitializer.cs" />
     <Compile Include="ServerDB.cs" />
     <Compile Include="Servers.cs" />
     <Compile Include="Transactions.cs" />
