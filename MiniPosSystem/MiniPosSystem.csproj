@@ -81,6 +81,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OurRestaurantModel.cs" />
     <Compile Include="PaymentInfo.cs" />
+    <Compile Include="PaymentInfoDB.cs" />
     <Compile Include="ProductDb.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
