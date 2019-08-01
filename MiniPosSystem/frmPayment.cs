@@ -21,7 +21,9 @@ namespace MiniPosSystem
 
         private void FrmPayment_Load(object sender, EventArgs e)
         {
-            lblTotalCash.Text = "Total: $" + order.Price.ToString();
+            string totalValue = "Total: $" + order.Price.ToString();
+            lblTotalCash.Text = totalValue;
+            lblTotalCard.Text = totalValue;
             grpCardInfo.Visible = false;
         }
 
