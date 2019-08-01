@@ -24,7 +24,7 @@ namespace MiniPosSystem
         /// <summary>
         /// The valid card number used in the transaction
         /// </summary>
-        public int CardNumber { get; set; }
+        public ulong CardNumber { get; set; }
 
         /// <summary>
         /// The full name of the card holder 

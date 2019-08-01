@@ -41,10 +41,19 @@ namespace MiniPosSystem
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (radCash.Checked)
+            if (radCard.Checked)
             {
-
+                GetCardInformation();
             }
+        }
+
+        private PaymentInfo GetCardInformation()
+        {
+            return new PaymentInfo(){ 
+                CardNumber = Convert.ToUInt64(txtCardNumber.Text),
+                NameOnCard = txtCardHolder.Text,
+                CardType = cboCardType.SelectedItem.ToString()
+            };
         }
     }
 }
