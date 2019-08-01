@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.cboProducts = new System.Windows.Forms.ComboBox();
-            this.lblProductsList = new System.Windows.Forms.Label();
             this.cboServer = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDesserts = new System.Windows.Forms.Button();
@@ -42,36 +39,6 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Location = new System.Drawing.Point(1100, 434);
-            this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(81, 57);
-            this.btnAddProduct.TabIndex = 0;
-            this.btnAddProduct.Text = "Add Product For Testing";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // cboProducts
-            // 
-            this.cboProducts.FormattingEnabled = true;
-            this.cboProducts.Location = new System.Drawing.Point(1100, 376);
-            this.cboProducts.Margin = new System.Windows.Forms.Padding(4);
-            this.cboProducts.Name = "cboProducts";
-            this.cboProducts.Size = new System.Drawing.Size(81, 24);
-            this.cboProducts.TabIndex = 1;
-            // 
-            // lblProductsList
-            // 
-            this.lblProductsList.AutoSize = true;
-            this.lblProductsList.Location = new System.Drawing.Point(1086, 334);
-            this.lblProductsList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProductsList.Name = "lblProductsList";
-            this.lblProductsList.Size = new System.Drawing.Size(106, 17);
-            this.lblProductsList.TabIndex = 2;
-            this.lblProductsList.Text = "List of Products";
             // 
             // cboServer
             // 
@@ -167,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 554);
+            this.ClientSize = new System.Drawing.Size(611, 554);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lstOrder);
@@ -178,9 +145,6 @@
             this.Controls.Add(this.btnDesserts);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboServer);
-            this.Controls.Add(this.lblProductsList);
-            this.Controls.Add(this.cboProducts);
-            this.Controls.Add(this.btnAddProduct);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmOrder";
             this.Text = "Order Form";
@@ -191,10 +155,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.ComboBox cboProducts;
-        private System.Windows.Forms.Label lblProductsList;
         private System.Windows.Forms.ComboBox cboServer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDesserts;
