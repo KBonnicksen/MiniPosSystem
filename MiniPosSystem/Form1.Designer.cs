@@ -47,6 +47,7 @@
             this.cboServer.Name = "cboServer";
             this.cboServer.Size = new System.Drawing.Size(121, 24);
             this.cboServer.TabIndex = 3;
+            this.cboServer.SelectedIndexChanged += new System.EventHandler(this.CboServer_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -95,6 +96,8 @@
             this.lstProducts.Name = "lstProducts";
             this.lstProducts.Size = new System.Drawing.Size(208, 228);
             this.lstProducts.TabIndex = 8;
+            this.lstProducts.SelectedIndexChanged += new System.EventHandler(this.LstProducts_SelectedIndexChanged);
+            this.lstProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstProducts_MouseDoubleClick);
             // 
             // btnOrder
             // 

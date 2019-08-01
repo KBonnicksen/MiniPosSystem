@@ -12,6 +12,7 @@ namespace MiniPosSystem
 {
     public partial class frmOrder : Form
     {
+        public Transactions order;
         public frmOrder()
         {
             InitializeComponent();
@@ -19,8 +20,7 @@ namespace MiniPosSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //PopulateProductsList();
-
+            order = new Transactions();
             PopulateServers();
         }
 
@@ -62,6 +62,41 @@ namespace MiniPosSystem
         {
             List<Products> desserts = ProductDb.GetDesserts();
             PopulateProductsList(desserts);
+        }
+
+        /// <summary>
+        /// Sets the server for the transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CboServer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Servers s = cboServer.SelectedItem as Servers;
+            order.ServerId = s.ServerId;
+        }
+
+        /// <summary>
+        /// Adds an item to the order on double click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LstProducts_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(lstProducts.SelectedItem != null)
+            {
+                Products newItem = (Products)lstProducts.SelectedItem;
+                order.Products.Add(newItem);
+                lstOrder.Items.Add($"{newItem.Name} - ${newItem.Price}");
+                UpdateTotal();
+            }
+        }
+
+        /// <summary>
+        /// Updates the total textbox on the form
+        /// </summary>
+        private void UpdateTotal()
+        {
+            txtTotal.Text = "$" + order.Price.ToString();
         }
     }
 }

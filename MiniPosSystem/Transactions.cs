@@ -12,6 +12,13 @@ namespace MiniPosSystem
     /// </summary>
     public class Transactions
     {
+        private decimal price;
+
+        public Transactions()
+        {
+            this.Products = new List<Products>();
+        }
+
         /// <summary>
         /// The unique Id of the transaction
         /// </summary>
@@ -27,7 +34,18 @@ namespace MiniPosSystem
         /// <summary>
         /// The price of the transaction
         /// </summary>
-        public decimal Price { get; set; }
+        public decimal Price
+        {
+            get
+            {
+                decimal total = 0;
+                foreach (Products p in this.Products)
+                {
+                    total += p.Price;
+                }
+                return total;
+            }
+            set => price = value; }
 
         /// <summary>
         /// The list of products associated with the
@@ -40,5 +58,11 @@ namespace MiniPosSystem
         /// (serves as order number)
         /// </summary>
         public int CardId { get; set; }
+
+        public void Add(Products p)
+        {
+            this.Products.Add(p);
+            this.Price += p.Price;
+        }
     }
 }
