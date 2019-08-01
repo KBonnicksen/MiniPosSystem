@@ -34,5 +34,7 @@ namespace MiniPosSystem
         /// Ex. Dessert, Entree, Beverage
         /// </summary>
         public string Category { get; set; }
+
+        
     }
 }

@@ -12,6 +12,7 @@ namespace MiniPosSystem
 {
     public partial class frmOrder : Form
     {
+        public Transactions order;
         public frmOrder()
         {
             InitializeComponent();
@@ -19,8 +20,7 @@ namespace MiniPosSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //PopulateProductsList();
-
+            order = new Transactions();
             PopulateServers();
         }
 
@@ -45,28 +45,6 @@ namespace MiniPosSystem
             lstProducts.DisplayMember = nameof(Products.Name);
         }
 
-        /// <summary>
-        /// Adds new product to database and repopulates product comboBox
-        /// on form. Mainly for testing purposes as of now (7/26/2019)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            /*
-            Products newProduct = new Products()
-            {
-                Name = "Margarita Pizza",
-                Price = 10.00m
-            };
-
-            ProductDb.AddProduct(newProduct);
-            string successMessage = $"Added {newProduct.Id}: {newProduct.Name}: {newProduct.Price}";
-            MessageBox.Show(successMessage);
-
-            PopulateProductsList();*/
-        }
-
         private void BtnBeverages_Click(object sender, EventArgs e)
         {
             List<Products> beverages = ProductDb.GetBeverages();
@@ -84,6 +62,41 @@ namespace MiniPosSystem
         {
             List<Products> desserts = ProductDb.GetDesserts();
             PopulateProductsList(desserts);
+        }
+
+        /// <summary>
+        /// Sets the server for the transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CboServer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Servers s = cboServer.SelectedItem as Servers;
+            order.ServerId = s.ServerId;
+        }
+
+        /// <summary>
+        /// Adds an item to the order on double click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LstProducts_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(lstProducts.SelectedItem != null)
+            {
+                Products newItem = (Products)lstProducts.SelectedItem;
+                order.Products.Add(newItem);
+                lstOrder.Items.Add($"{newItem.Name} - ${newItem.Price}");
+                UpdateTotal();
+            }
+        }
+
+        /// <summary>
+        /// Updates the total textbox on the form
+        /// </summary>
+        private void UpdateTotal()
+        {
+            txtTotal.Text = "$" + order.Price.ToString();
         }
     }
 }
