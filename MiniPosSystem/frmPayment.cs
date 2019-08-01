@@ -38,5 +38,13 @@ namespace MiniPosSystem
             grpCardInfo.Visible = true;
             grpCashPayment.Visible = false;
         }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            if (radCash.Checked)
+            {
+
+            }
+        }
     }
 }

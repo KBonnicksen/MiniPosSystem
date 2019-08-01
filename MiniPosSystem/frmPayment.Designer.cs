@@ -31,6 +31,7 @@
             this.radCash = new System.Windows.Forms.RadioButton();
             this.radCard = new System.Windows.Forms.RadioButton();
             this.grpCardInfo = new System.Windows.Forms.GroupBox();
+            this.lblTotalCard = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cboCardType = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,11 +41,10 @@
             this.lblTotalCash = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.grpCashPayment = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblTotalCard = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpCardInfo.SuspendLayout();
             this.grpCashPayment.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,15 @@
             this.grpCardInfo.TabIndex = 2;
             this.grpCardInfo.TabStop = false;
             this.grpCardInfo.Text = "Credit Card Information";
+            // 
+            // lblTotalCard
+            // 
+            this.lblTotalCard.AutoSize = true;
+            this.lblTotalCard.Location = new System.Drawing.Point(21, 37);
+            this.lblTotalCard.Name = "lblTotalCard";
+            this.lblTotalCard.Size = new System.Drawing.Size(44, 17);
+            this.lblTotalCard.TabIndex = 6;
+            this.lblTotalCard.Text = "Total:";
             // 
             // label3
             // 
@@ -160,6 +169,7 @@
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit Payment";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
             // grpCashPayment
             // 
@@ -175,14 +185,20 @@
             this.grpCashPayment.TabStop = false;
             this.grpCashPayment.Text = "Cash Payment";
             // 
-            // label4
+            // textBox4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Cash:";
+            this.textBox4.Location = new System.Drawing.Point(128, 168);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 8;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(128, 111);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 7;
             // 
             // label5
             // 
@@ -193,29 +209,14 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Change:";
             // 
-            // textBox3
+            // label4
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 111);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(128, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 8;
-            // 
-            // lblTotalCard
-            // 
-            this.lblTotalCard.AutoSize = true;
-            this.lblTotalCard.Location = new System.Drawing.Point(21, 37);
-            this.lblTotalCard.Name = "lblTotalCard";
-            this.lblTotalCard.Size = new System.Drawing.Size(44, 17);
-            this.lblTotalCard.TabIndex = 6;
-            this.lblTotalCard.Text = "Total:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Cash:";
             // 
             // frmPayment
             // 
