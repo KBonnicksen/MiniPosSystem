@@ -106,6 +106,7 @@
             this.btnOrder.TabIndex = 9;
             this.btnOrder.Text = "Place Order";
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.BtnOrder_Click);
             // 
             // lstOrder
             // 

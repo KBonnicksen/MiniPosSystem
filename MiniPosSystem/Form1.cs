@@ -98,5 +98,11 @@ namespace MiniPosSystem
         {
             txtTotal.Text = "$" + order.Price.ToString();
         }
+
+        private void BtnOrder_Click(object sender, EventArgs e)
+        {
+            frmPayment payment = new frmPayment(order);
+            payment.Show();
+        }
     }
 }
