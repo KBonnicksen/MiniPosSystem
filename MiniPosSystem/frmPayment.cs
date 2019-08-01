@@ -43,17 +43,24 @@ namespace MiniPosSystem
         {
             if (radCard.Checked)
             {
-                GetCardInformation();
+                AddNewCard();
             }
+
+            TransactionsDB.AddTransaction(order);
+            MessageBox.Show("Thank you for dining with us!");
+            ActiveForm.Close();
         }
 
-        private PaymentInfo GetCardInformation()
+        private void AddNewCard()
         {
-            return new PaymentInfo(){ 
+            PaymentInfo card = new PaymentInfo(){ 
                 CardNumber = Convert.ToUInt64(txtCardNumber.Text),
                 NameOnCard = txtCardHolder.Text,
                 CardType = cboCardType.SelectedItem.ToString()
             };
+
+            PaymentInfoDB.AddPayment(card);
+            order.CardId = card.CardId;
         }
     }
 }
