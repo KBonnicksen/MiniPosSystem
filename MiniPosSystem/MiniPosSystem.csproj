@@ -82,6 +82,14 @@
     <Compile Include="Migrations\201908012316040_CardIDToUlong.Designer.cs">
       <DependentUpon>201908012316040_CardIDToUlong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908022226078_ProdTranManyToMany.cs" />
+    <Compile Include="Migrations\201908022226078_ProdTranManyToMany.Designer.cs">
+      <DependentUpon>201908022226078_ProdTranManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908022246011_ManyMany.cs" />
+    <Compile Include="Migrations\201908022246011_ManyMany.Designer.cs">
+      <DependentUpon>201908022246011_ManyMany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OurRestaurantModel.cs" />
     <Compile Include="PaymentInfo.cs" />
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908012316040_CardIDToUlong.resx">
       <DependentUpon>201908012316040_CardIDToUlong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908022226078_ProdTranManyToMany.resx">
+      <DependentUpon>201908022226078_ProdTranManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908022246011_ManyMany.resx">
+      <DependentUpon>201908022246011_ManyMany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

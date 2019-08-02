@@ -12,19 +12,20 @@ namespace MiniPosSystem
     {
         protected override void Seed(OurRestaurantModel context)
         {
-            IList<Products> defaultProducts = new List<Products>();
+            IList<Products> defaultProducts = new List<Products>
+            {
+                new Entrees() { Id = 1, Name = "PB&J", Price = Convert.ToDecimal(6.6) },
+                new Entrees() { Id = 2, Name = "Cuban", Price = Convert.ToDecimal(8.0) },
+                new Entrees() { Id = 3, Name = "Reuben", Price = Convert.ToDecimal(8.5) },
 
-            defaultProducts.Add(new Entrees() { Id = 1, Name = "PB&J", Price = Convert.ToDecimal(6.6) });
-            defaultProducts.Add(new Entrees() { Id = 2, Name = "Cuban", Price = Convert.ToDecimal(8.0) });
-            defaultProducts.Add(new Entrees() { Id = 3, Name = "Reuben", Price = Convert.ToDecimal(8.5) });
+                new Desserts() { Id = 4, Name = "Chocolate Cake", Price = Convert.ToDecimal(4.5) },
+                new Desserts() { Id = 5, Name = "Strawberry Jell-O", Price = Convert.ToDecimal(3) },
+                new Desserts() { Id = 6, Name = "Tiramisu", Price = Convert.ToDecimal(6) },
 
-            defaultProducts.Add(new Desserts() { Id = 4, Name = "Chocolate Cake", Price = Convert.ToDecimal(4.5) });
-            defaultProducts.Add(new Desserts() { Id = 5, Name = "Strawberry Jell-O", Price = Convert.ToDecimal(3) });
-            defaultProducts.Add(new Desserts() { Id = 6, Name = "Tiramisu", Price = Convert.ToDecimal(6) });
-
-            defaultProducts.Add(new Beverages() { Id = 7, Name = "Lemonade", Price = Convert.ToDecimal(2) });
-            defaultProducts.Add(new Beverages() { Id = 8, Name = "Milk", Price = Convert.ToDecimal(1.25) });
-            defaultProducts.Add(new Beverages() { Id = 9, Name = "Long Island", Price = Convert.ToDecimal(7.5) });
+                new Beverages() { Id = 7, Name = "Lemonade", Price = Convert.ToDecimal(2) },
+                new Beverages() { Id = 8, Name = "Milk", Price = Convert.ToDecimal(1.25) },
+                new Beverages() { Id = 9, Name = "Long Island", Price = Convert.ToDecimal(7.5) }
+            };
 
             context.Products.AddRange(defaultProducts);
 
