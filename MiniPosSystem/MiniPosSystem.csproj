@@ -70,8 +70,22 @@
     <Compile Include="frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907300319031_InitialCreate.cs" />
+    <Compile Include="Migrations\201907300319031_InitialCreate.Designer.cs">
+      <DependentUpon>201907300319031_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908012251428_AlloNulls.cs" />
+    <Compile Include="Migrations\201908012251428_AlloNulls.Designer.cs">
+      <DependentUpon>201908012251428_AlloNulls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908012316040_CardIDToUlong.cs" />
+    <Compile Include="Migrations\201908012316040_CardIDToUlong.Designer.cs">
+      <DependentUpon>201908012316040_CardIDToUlong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OurRestaurantModel.cs" />
     <Compile Include="PaymentInfo.cs" />
+    <Compile Include="PaymentInfoDB.cs" />
     <Compile Include="ProductDb.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
@@ -80,11 +94,21 @@
     <Compile Include="ServerDB.cs" />
     <Compile Include="Servers.cs" />
     <Compile Include="Transactions.cs" />
+    <Compile Include="TransactionsDB.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300319031_InitialCreate.resx">
+      <DependentUpon>201907300319031_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908012251428_AlloNulls.resx">
+      <DependentUpon>201908012251428_AlloNulls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908012316040_CardIDToUlong.resx">
+      <DependentUpon>201908012316040_CardIDToUlong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

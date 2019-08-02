@@ -57,7 +57,7 @@ namespace MiniPosSystem
         /// The unique Id of the order using a card
         /// (serves as order number)
         /// </summary>
-        public int CardId { get; set; }
+        public int? CardId { get; set; }
 
         public void Add(Products p)
         {
