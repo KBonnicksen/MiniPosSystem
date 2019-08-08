@@ -26,7 +26,6 @@ namespace MiniPosSystem
         /// Adds new server to database
         /// </summary>
         /// <param name="newServer"></param>
-        /// <returns></returns>
         public static Servers AddServer(Servers newServer)
         {
             using (var context = new OurRestaurantModel())
@@ -42,26 +41,29 @@ namespace MiniPosSystem
         /// Updates an existing server in the database
         /// </summary>
         /// <param name="server"></param>
-        /// <returns></returns>
-        public static Servers UpdateServer(Servers server)
+        public static bool UpdateServer(Servers server)
         {
             using (var context = new OurRestaurantModel())
             {
                 context.Servers.Add(server);
-                // Tell EF we are updating an existing entity
                 context.Entry(server).State = EntityState.Modified;
-                context.SaveChanges();
-                return server;
+                int rowsAffected = context.SaveChanges();
+                return rowsAffected > 0;
             }
         }
 
-        public static void DeleteServer(Servers server)
+        /// <summary>
+        /// Deletes a server from the database
+        /// </summary>
+        /// <param name="server"></param>
+        public static bool DeleteServer(Servers server)
         {
             using (var context = new OurRestaurantModel())
             {
                 context.Servers.Add(server);
                 context.Entry(server).State = EntityState.Deleted;
                 int rowsAffected = context.SaveChanges();
+                return rowsAffected > 0;
             }
         }
     }
