@@ -35,6 +35,6 @@ namespace MiniPosSystem
         /// </summary>
         public string Category { get; set; }
 
-        
+        public virtual ICollection<Transactions> Transactions { get; set; }
     }
 }

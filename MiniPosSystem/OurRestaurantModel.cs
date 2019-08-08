@@ -17,6 +17,7 @@ namespace MiniPosSystem
         public OurRestaurantModel()
             : base("name=OurRestaurantModel")
         {
+            //Sets the initial restaurant data 
             Database.SetInitializer<OurRestaurantModel>(new RestaurantDBInitializer());
         }
 
@@ -25,9 +26,14 @@ namespace MiniPosSystem
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
+        public /*virtual*/ DbSet<Products> Products { get; set; }
         public virtual DbSet<Servers> Servers { get; set; }
         public virtual DbSet<PaymentInfo> PaymentInfo { get; set; }
-        public virtual DbSet<Transactions> Transactions { get; set; }
+        public /*virtual*/ DbSet<Transactions> Transactions { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

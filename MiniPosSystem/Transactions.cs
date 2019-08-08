@@ -29,7 +29,8 @@ namespace MiniPosSystem
         /// The unique Id of the server associated with 
         /// a given transaction
         /// </summary>
-        public int ServerId { get; set; }
+        //public int ServerId { get; set; }
+        public Servers Server { get; set; }
 
         /// <summary>
         /// The price of the transaction
@@ -51,15 +52,15 @@ namespace MiniPosSystem
         /// The list of products associated with the
         /// transaction
         /// </summary>
-        public virtual List<Products> Products { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
 
         /// <summary>
-        /// The unique Id of the order using a card
-        /// (serves as order number)
+        /// The payment information relating to this transaction
         /// </summary>
-        public int? CardId { get; set; }
+        ///public int? CardId { get; set; }
+        public PaymentInfo PaymentInfo { get; set; }
 
-        public void Add(Products p)
+        public void AddProd(Products p)
         {
             this.Products.Add(p);
             this.Price += p.Price;

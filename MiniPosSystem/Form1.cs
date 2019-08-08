@@ -49,7 +49,6 @@ namespace MiniPosSystem
         {
             List<Products> beverages = ProductDb.GetBeverages();
             PopulateProductsList(beverages);
-
         }
 
         private void BtnEntrees_Click(object sender, EventArgs e)
@@ -72,7 +71,7 @@ namespace MiniPosSystem
         private void CboServer_SelectedIndexChanged(object sender, EventArgs e)
         {
             Servers s = cboServer.SelectedItem as Servers;
-            order.ServerId = s.ServerId;
+            order.Server = s;
         }
 
         /// <summary>

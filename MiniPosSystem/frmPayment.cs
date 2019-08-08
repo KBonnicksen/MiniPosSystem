@@ -60,7 +60,7 @@ namespace MiniPosSystem
             };
 
             PaymentInfoDB.AddPayment(card);
-            order.CardId = card.CardId;
+            order.PaymentInfo = card;
         }
     }
 }
