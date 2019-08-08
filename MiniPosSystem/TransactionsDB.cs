@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,18 @@ namespace MiniPosSystem
         {
             using (var context = new OurRestaurantModel())
             {
+                /////////////////////////////////////
+                // Need to keep for tracking items ALREADY IN database
+                // Without this, items will be re-added to the database
+                // with identical rows but for the ID column
+                // DO NOT TAKE OUT
+                foreach (var item in order.Products)
+                {
+                    context.Entry(item).State = EntityState.Unchanged;
+                }
+                context.Entry(order.Server).State = EntityState.Unchanged;
+                /////////////////////////////////////
+                
                 context.Transactions.Add(order);
                 context.SaveChanges();
 
