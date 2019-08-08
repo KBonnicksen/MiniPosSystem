@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,33 @@ namespace MiniPosSystem
                 context.SaveChanges();
 
                 return newServer;
+            }
+        }
+
+        /// <summary>
+        /// Updates an existing server in the database
+        /// </summary>
+        /// <param name="server"></param>
+        /// <returns></returns>
+        public static Servers UpdateServer(Servers server)
+        {
+            using (var context = new OurRestaurantModel())
+            {
+                context.Servers.Add(server);
+                // Tell EF we are updating an existing entity
+                context.Entry(server).State = EntityState.Modified;
+                context.SaveChanges();
+                return server;
+            }
+        }
+
+        public static void DeleteServer(Servers server)
+        {
+            using (var context = new OurRestaurantModel())
+            {
+                context.Servers.Add(server);
+                context.Entry(server).State = EntityState.Deleted;
+                int rowsAffected = context.SaveChanges();
             }
         }
     }
