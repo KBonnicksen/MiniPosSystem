@@ -103,5 +103,13 @@ namespace MiniPosSystem
             frmPayment payment = new frmPayment(order);
             payment.Show();
         }
+
+        private void BtnManageServers_Click(object sender, EventArgs e)
+        {
+            Servers s = (Servers)cboServer.SelectedItem;
+            frmManageServers frm = new frmManageServers(s);
+
+            frm.ShowDialog();
+        }
     }
 }

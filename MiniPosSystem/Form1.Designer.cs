@@ -38,31 +38,34 @@
             this.lstOrder = new System.Windows.Forms.ListBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnManageServers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cboServer
             // 
             this.cboServer.FormattingEnabled = true;
-            this.cboServer.Location = new System.Drawing.Point(28, 85);
+            this.cboServer.Location = new System.Drawing.Point(32, 106);
+            this.cboServer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboServer.Name = "cboServer";
-            this.cboServer.Size = new System.Drawing.Size(121, 24);
+            this.cboServer.Size = new System.Drawing.Size(136, 28);
             this.cboServer.TabIndex = 3;
             this.cboServer.SelectedIndexChanged += new System.EventHandler(this.CboServer_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 61);
+            this.label1.Location = new System.Drawing.Point(28, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Server:";
             // 
             // btnDesserts
             // 
-            this.btnDesserts.Location = new System.Drawing.Point(212, 218);
+            this.btnDesserts.Location = new System.Drawing.Point(238, 272);
+            this.btnDesserts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDesserts.Name = "btnDesserts";
-            this.btnDesserts.Size = new System.Drawing.Size(92, 55);
+            this.btnDesserts.Size = new System.Drawing.Size(104, 69);
             this.btnDesserts.TabIndex = 5;
             this.btnDesserts.Text = "Desserts";
             this.btnDesserts.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // btnEntrees
             // 
-            this.btnEntrees.Location = new System.Drawing.Point(212, 134);
+            this.btnEntrees.Location = new System.Drawing.Point(238, 168);
+            this.btnEntrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEntrees.Name = "btnEntrees";
-            this.btnEntrees.Size = new System.Drawing.Size(92, 55);
+            this.btnEntrees.Size = new System.Drawing.Size(104, 69);
             this.btnEntrees.TabIndex = 6;
             this.btnEntrees.Text = "Entrees";
             this.btnEntrees.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btnBeverages
             // 
-            this.btnBeverages.Location = new System.Drawing.Point(212, 50);
+            this.btnBeverages.Location = new System.Drawing.Point(238, 62);
+            this.btnBeverages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBeverages.Name = "btnBeverages";
-            this.btnBeverages.Size = new System.Drawing.Size(92, 55);
+            this.btnBeverages.Size = new System.Drawing.Size(104, 69);
             this.btnBeverages.TabIndex = 7;
             this.btnBeverages.Text = "Beverages";
             this.btnBeverages.UseVisualStyleBackColor = true;
@@ -91,18 +96,20 @@
             // lstProducts
             // 
             this.lstProducts.FormattingEnabled = true;
-            this.lstProducts.ItemHeight = 16;
-            this.lstProducts.Location = new System.Drawing.Point(366, 50);
+            this.lstProducts.ItemHeight = 20;
+            this.lstProducts.Location = new System.Drawing.Point(412, 62);
+            this.lstProducts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstProducts.Name = "lstProducts";
-            this.lstProducts.Size = new System.Drawing.Size(208, 228);
+            this.lstProducts.Size = new System.Drawing.Size(234, 284);
             this.lstProducts.TabIndex = 8;
             this.lstProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstProducts_MouseDoubleClick);
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(366, 452);
+            this.btnOrder.Location = new System.Drawing.Point(412, 565);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(92, 55);
+            this.btnOrder.Size = new System.Drawing.Size(104, 69);
             this.btnOrder.TabIndex = 9;
             this.btnOrder.Text = "Place Order";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -111,33 +118,46 @@
             // lstOrder
             // 
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.ItemHeight = 16;
-            this.lstOrder.Location = new System.Drawing.Point(29, 311);
+            this.lstOrder.ItemHeight = 20;
+            this.lstOrder.Location = new System.Drawing.Point(33, 389);
+            this.lstOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(138, 196);
+            this.lstOrder.Size = new System.Drawing.Size(155, 244);
             this.lstOrder.TabIndex = 10;
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(366, 400);
+            this.txtTotal.Location = new System.Drawing.Point(412, 500);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtTotal.Size = new System.Drawing.Size(112, 26);
             this.txtTotal.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(363, 376);
+            this.label2.Location = new System.Drawing.Point(408, 470);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Total:";
             // 
+            // btnManageServers
+            // 
+            this.btnManageServers.Location = new System.Drawing.Point(33, 141);
+            this.btnManageServers.Name = "btnManageServers";
+            this.btnManageServers.Size = new System.Drawing.Size(135, 54);
+            this.btnManageServers.TabIndex = 13;
+            this.btnManageServers.Text = "Manage Servers";
+            this.btnManageServers.UseVisualStyleBackColor = true;
+            this.btnManageServers.Click += new System.EventHandler(this.BtnManageServers_Click);
+            // 
             // frmOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 554);
+            this.ClientSize = new System.Drawing.Size(687, 692);
+            this.Controls.Add(this.btnManageServers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lstOrder);
@@ -148,7 +168,7 @@
             this.Controls.Add(this.btnDesserts);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboServer);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmOrder";
             this.Text = "Order Form";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -168,6 +188,7 @@
         private System.Windows.Forms.ListBox lstOrder;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnManageServers;
     }
 }
 

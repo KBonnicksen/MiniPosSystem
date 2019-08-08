@@ -64,6 +64,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageServers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageServers.Designer.cs">
+      <DependentUpon>frmManageServers.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="TransactionsDB.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageServers.resx">
+      <DependentUpon>frmManageServers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
