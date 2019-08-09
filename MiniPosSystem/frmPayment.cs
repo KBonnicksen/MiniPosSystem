@@ -37,6 +37,7 @@ namespace MiniPosSystem
         {
             grpCardInfo.Visible = true;
             grpCashPayment.Visible = false;
+            btnSubmit.Enabled = false;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
@@ -46,10 +47,48 @@ namespace MiniPosSystem
                 AddNewCard();
             }
 
-            TransactionsDB.AddTransaction(order);
-            MessageBox.Show("Thank you for dining with us!");
-            ActiveForm.Close();
+            if(IsValidInput())
+            {
+                TransactionsDB.AddTransaction(order);
+                MessageBox.Show("Thank you for dining with us!");
+                ActiveForm.Close();
+            }
+
+            btnSubmit.Enabled = true;
+
         }
+
+
+        /// <summary>
+        /// Returns false if no input is given or numbers are not supplied.
+        /// </summary>
+        /// <returns>False if not valid numbers</returns>
+        private Boolean IsValidInput()
+        {
+            try
+            {
+                if (txtCashGiven.Text == string.Empty)
+                {
+                    MessageBox.Show("Please enter a cash amount");
+                    return false;
+                }
+                if (Convert.ToDecimal(txtCashGiven.Text) < order.Price)
+                {
+                    btnSubmit.Enabled = false;
+                    MessageBox.Show("Please pay the bill in its entirety!");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter numbers in decimal format (ex. 8, 8.00, 8.50)");
+                return false;
+            }
+            
+            return true;
+        }
+
+
 
         private void AddNewCard()
         {
