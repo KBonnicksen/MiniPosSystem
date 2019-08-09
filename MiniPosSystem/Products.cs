@@ -40,7 +40,7 @@ namespace MiniPosSystem
 
         public override string ToString()
         {
-            return $"{Name} - {Price}";
+            return $"{Name} - ${Price}";
         }
     }
 }
