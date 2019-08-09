@@ -122,7 +122,7 @@
             this.lstOrder.Location = new System.Drawing.Point(22, 253);
             this.lstOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(105, 160);
+            this.lstOrder.Size = new System.Drawing.Size(206, 160);
             this.lstOrder.TabIndex = 10;
             this.lstOrder.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstOrder_MouseDoubleClick);
             // 
