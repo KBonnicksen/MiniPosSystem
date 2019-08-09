@@ -37,17 +37,17 @@ namespace MiniPosSystem
         {
             grpCardInfo.Visible = true;
             grpCashPayment.Visible = false;
-            btnSubmit.Enabled = false;
+
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (radCard.Checked)
+            if (radCard.Checked && IsValidCard() )
             {
                 AddNewCard();
-            }
 
-            if(IsValidInput())
+            }
+            else if(radCash.Checked && IsValidInput())
             {
                 TransactionsDB.AddTransaction(order);
                 MessageBox.Show("Thank you for dining with us!");
@@ -60,6 +60,33 @@ namespace MiniPosSystem
 
 
         /// <summary>
+        /// Returns true if valid information is given
+        /// </summary>
+        /// <returns></returns>
+        private Boolean IsValidCard()
+        {
+            try
+            {
+                if ( string.IsNullOrWhiteSpace(txtCardNumber.Text) ||
+                     string.IsNullOrWhiteSpace(txtCardHolder.Text) ||
+                    cboCardType.SelectedItem == null)
+                {
+                    MessageBox.Show("Please fill out every entry");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                //MessageBox.Show("Please enter valid information");
+                return false;
+            }
+
+            btnSubmit.Enabled = true;
+            return true;
+        }
+
+
+        /// <summary>
         /// Returns false if no input is given or numbers are not supplied.
         /// </summary>
         /// <returns>False if not valid numbers</returns>
@@ -67,7 +94,7 @@ namespace MiniPosSystem
         {
             try
             {
-                if (txtCashGiven.Text == string.Empty)
+                if (string.IsNullOrWhiteSpace(txtCashGiven.Text))
                 {
                     MessageBox.Show("Please enter a cash amount");
                     return false;
@@ -92,14 +119,26 @@ namespace MiniPosSystem
 
         private void AddNewCard()
         {
-            PaymentInfo card = new PaymentInfo(){ 
-                CardNumber = Convert.ToUInt64(txtCardNumber.Text),
-                NameOnCard = txtCardHolder.Text,
-                CardType = cboCardType.SelectedItem.ToString()
-            };
-
-            PaymentInfoDB.AddPayment(card);
-            order.PaymentInfo = card;
+            try
+            {
+                PaymentInfo card = new PaymentInfo()
+                {
+                    CardNumber = Convert.ToUInt64(txtCardNumber.Text),
+                    NameOnCard = txtCardHolder.Text,
+                    CardType = cboCardType.SelectedItem.ToString()
+                };
+                PaymentInfoDB.AddPayment(card);
+                order.PaymentInfo = card;
+                // add order
+                TransactionsDB.AddTransaction(order);
+                MessageBox.Show("Thank you for dining with us!");
+                ActiveForm.Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter valid information");
+            }
+            
         }
     }
 }
