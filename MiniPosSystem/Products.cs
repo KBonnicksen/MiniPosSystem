@@ -36,5 +36,11 @@ namespace MiniPosSystem
         public string Category { get; set; }
 
         public virtual ICollection<Transactions> Transactions { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{Name} - {Price}";
+        }
     }
 }
