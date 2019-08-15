@@ -42,12 +42,12 @@ namespace MiniPosSystem
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (radCard.Checked && IsValidCard() )
+            if (radCard.Checked && IsValidCard(txtCardNumber) )
             {
                 AddNewCard();
 
             }
-            else if(radCash.Checked && IsValidInput())
+            else if(radCash.Checked && IsValidInput(txtCashGiven))
             {
                 TransactionsDB.AddTransaction(order);
                 decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
@@ -65,12 +65,12 @@ namespace MiniPosSystem
         /// Returns true if valid information is given
         /// </summary>
         /// <returns></returns>
-        private Boolean IsValidCard()
+        private Boolean IsValidCard(TextBox input)
         {
             try
             {
-                if ( string.IsNullOrWhiteSpace(txtCardNumber.Text) ||
-                     string.IsNullOrWhiteSpace(txtCardHolder.Text) ||
+                if ( string.IsNullOrWhiteSpace(input.Text) ||
+                     string.IsNullOrWhiteSpace(input.Text) ||
                     cboCardType.SelectedItem == null)
                 {
                     MessageBox.Show("Please fill out every entry");
@@ -89,15 +89,17 @@ namespace MiniPosSystem
 
 
         /// <summary>
-        /// Returns false if no input is given or numbers are not supplied.
+        /// Returns false if no input is given or numbers are not 
+        /// present.
         /// </summary>
         /// <returns>False if not valid numbers</returns>
-        private Boolean IsValidInput()
+        private Boolean IsValidInput(TextBox input)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtCashGiven.Text))
+                if (string.IsNullOrWhiteSpace(input.Text))
                 {
+                    btnSubmit.Enabled = false;
                     MessageBox.Show("Please enter a cash amount");
                     return false;
                 }
