@@ -73,6 +73,7 @@ namespace MiniPosSystem
                      string.IsNullOrWhiteSpace(input.Text) ||
                     cboCardType.SelectedItem == null)
                 {
+                    btnSubmit.Enabled = false;
                     MessageBox.Show("Please fill out every entry");
                     return false;
                 }
@@ -140,6 +141,7 @@ namespace MiniPosSystem
             }
             catch (FormatException)
             {
+                btnSubmit.Enabled = false;
                 MessageBox.Show("Please enter valid information");
             }
             
