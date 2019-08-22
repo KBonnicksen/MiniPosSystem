@@ -1,5 +1,4 @@
-﻿using MiniPosSystem.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,19 +49,15 @@ namespace MiniPosSystem
             }
             else if(radCash.Checked && IsValidInput(txtCashGiven))
             {
-                
-                decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
-                order.PaymentInfo.CashTendered = cashGiven;
-                txtChange.Text = $"{ cashGiven - order.Price }";
                 TransactionsDB.AddTransaction(order);
-
+                decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
+                txtChange.Text = $"{ cashGiven - order.Price }";
+                //MessageBox.Show("Thank you for dining with us!");
                 ActiveForm.Close();
-
-                Form receipt = new frmReceipt(order);
-                receipt.ShowDialog();
             }
 
             btnSubmit.Enabled = true;
+
         }
 
 
