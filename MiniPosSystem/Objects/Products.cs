@@ -43,4 +43,16 @@ namespace MiniPosSystem
             return $"{Name} - ${Price}";
         }
     }
+
+    public class Beverages : Products
+    {
+    }
+
+    public class Entrees : Products
+    {
+    }
+
+    public class Desserts : Products
+    {
+    }
 }
