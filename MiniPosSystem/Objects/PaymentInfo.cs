@@ -42,6 +42,6 @@ namespace MiniPosSystem
         /// The amount of money given to the cashier as payment.
         /// If a card was used, this value will be null
         /// </summary>
-        public double? CashTendered { get; set; }
+        public decimal? CashTendered { get; set; }
     }
 }
