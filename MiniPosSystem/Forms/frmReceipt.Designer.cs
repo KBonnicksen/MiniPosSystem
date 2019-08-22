@@ -35,9 +35,9 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.lblCashCard = new System.Windows.Forms.Label();
+            this.lblChangeCard = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.lblCardName = new System.Windows.Forms.Label();
+            this.lblCardNameCash = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -106,14 +106,14 @@
             this.listBox1.Size = new System.Drawing.Size(484, 180);
             this.listBox1.TabIndex = 6;
             // 
-            // lblCashCard
+            // lblChangeCard
             // 
-            this.lblCashCard.AutoSize = true;
-            this.lblCashCard.Location = new System.Drawing.Point(72, 479);
-            this.lblCashCard.Name = "lblCashCard";
-            this.lblCashCard.Size = new System.Drawing.Size(74, 17);
-            this.lblCashCard.TabIndex = 7;
-            this.lblCashCard.Text = "Cash/Card";
+            this.lblChangeCard.AutoSize = true;
+            this.lblChangeCard.Location = new System.Drawing.Point(72, 479);
+            this.lblChangeCard.Name = "lblChangeCard";
+            this.lblChangeCard.Size = new System.Drawing.Size(91, 17);
+            this.lblChangeCard.TabIndex = 7;
+            this.lblChangeCard.Text = "Change/Card";
             // 
             // lblTotal
             // 
@@ -124,19 +124,19 @@
             this.lblTotal.TabIndex = 8;
             this.lblTotal.Text = "Total";
             // 
-            // lblCardName
+            // lblCardNameCash
             // 
-            this.lblCardName.AutoSize = true;
-            this.lblCardName.Location = new System.Drawing.Point(72, 450);
-            this.lblCardName.Name = "lblCardName";
-            this.lblCardName.Size = new System.Drawing.Size(97, 17);
-            this.lblCardName.TabIndex = 9;
-            this.lblCardName.Text = "Name on card";
+            this.lblCardNameCash.AutoSize = true;
+            this.lblCardNameCash.Location = new System.Drawing.Point(72, 450);
+            this.lblCardNameCash.Name = "lblCardNameCash";
+            this.lblCardNameCash.Size = new System.Drawing.Size(169, 17);
+            this.lblCardNameCash.TabIndex = 9;
+            this.lblCardNameCash.Text = "Name on card/cash given";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 512);
+            this.label4.Location = new System.Drawing.Point(123, 524);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(273, 17);
             this.label4.TabIndex = 10;
@@ -145,7 +145,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 532);
+            this.label5.Location = new System.Drawing.Point(42, 544);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(461, 17);
             this.label5.TabIndex = 11;
@@ -154,7 +154,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(219, 553);
+            this.label6.Location = new System.Drawing.Point(219, 565);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 17);
             this.label6.TabIndex = 12;
@@ -168,9 +168,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblCardName);
+            this.Controls.Add(this.lblCardNameCash);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.lblCashCard);
+            this.Controls.Add(this.lblChangeCard);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblTime);
@@ -195,9 +195,9 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label lblCashCard;
+        private System.Windows.Forms.Label lblChangeCard;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblCardName;
+        private System.Windows.Forms.Label lblCardNameCash;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

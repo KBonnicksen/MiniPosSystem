@@ -103,6 +103,10 @@
     <Compile Include="Migrations\201908220407298_paymentCashProperty.Designer.cs">
       <DependentUpon>201908220407298_paymentCashProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908220413564_ProductCashToDouble.cs" />
+    <Compile Include="Migrations\201908220413564_ProductCashToDouble.Designer.cs">
+      <DependentUpon>201908220413564_ProductCashToDouble.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OurRestaurantModel.cs" />
     <Compile Include="Objects\PaymentInfo.cs" />
@@ -145,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908220407298_paymentCashProperty.resx">
       <DependentUpon>201908220407298_paymentCashProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908220413564_ProductCashToDouble.resx">
+      <DependentUpon>201908220413564_ProductCashToDouble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
