@@ -33,7 +33,7 @@ namespace MiniPosSystem
         /// The type of this product 
         /// Ex. Dessert, Entree, Beverage
         /// </summary>
-        public string Category { get; set; }
+        public string Category { get; set; } 
 
         public virtual ICollection<Transactions> Transactions { get; set; }
     } 
