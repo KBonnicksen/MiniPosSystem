@@ -44,28 +44,29 @@
             // cboServer
             // 
             this.cboServer.FormattingEnabled = true;
-            this.cboServer.Location = new System.Drawing.Point(32, 106);
-            this.cboServer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboServer.Location = new System.Drawing.Point(21, 69);
+            this.cboServer.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboServer.Name = "cboServer";
-            this.cboServer.Size = new System.Drawing.Size(136, 28);
+            this.cboServer.Size = new System.Drawing.Size(92, 21);
             this.cboServer.TabIndex = 3;
             this.cboServer.SelectedIndexChanged += new System.EventHandler(this.CboServer_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 76);
+            this.label1.Location = new System.Drawing.Point(19, 49);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Server:";
             // 
             // btnDesserts
             // 
-            this.btnDesserts.Location = new System.Drawing.Point(238, 272);
-            this.btnDesserts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDesserts.Location = new System.Drawing.Point(159, 177);
+            this.btnDesserts.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDesserts.Name = "btnDesserts";
-            this.btnDesserts.Size = new System.Drawing.Size(104, 69);
+            this.btnDesserts.Size = new System.Drawing.Size(69, 45);
             this.btnDesserts.TabIndex = 5;
             this.btnDesserts.Text = "Desserts";
             this.btnDesserts.UseVisualStyleBackColor = true;
@@ -73,10 +74,10 @@
             // 
             // btnEntrees
             // 
-            this.btnEntrees.Location = new System.Drawing.Point(238, 168);
-            this.btnEntrees.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEntrees.Location = new System.Drawing.Point(159, 109);
+            this.btnEntrees.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEntrees.Name = "btnEntrees";
-            this.btnEntrees.Size = new System.Drawing.Size(104, 69);
+            this.btnEntrees.Size = new System.Drawing.Size(69, 45);
             this.btnEntrees.TabIndex = 6;
             this.btnEntrees.Text = "Entrees";
             this.btnEntrees.UseVisualStyleBackColor = true;
@@ -84,10 +85,10 @@
             // 
             // btnBeverages
             // 
-            this.btnBeverages.Location = new System.Drawing.Point(238, 62);
-            this.btnBeverages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBeverages.Location = new System.Drawing.Point(159, 40);
+            this.btnBeverages.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnBeverages.Name = "btnBeverages";
-            this.btnBeverages.Size = new System.Drawing.Size(104, 69);
+            this.btnBeverages.Size = new System.Drawing.Size(69, 45);
             this.btnBeverages.TabIndex = 7;
             this.btnBeverages.Text = "Beverages";
             this.btnBeverages.UseVisualStyleBackColor = true;
@@ -96,20 +97,20 @@
             // lstProducts
             // 
             this.lstProducts.FormattingEnabled = true;
-            this.lstProducts.ItemHeight = 20;
-            this.lstProducts.Location = new System.Drawing.Point(412, 62);
-            this.lstProducts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstProducts.Location = new System.Drawing.Point(275, 40);
+            this.lstProducts.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lstProducts.Name = "lstProducts";
-            this.lstProducts.Size = new System.Drawing.Size(234, 284);
+            this.lstProducts.Size = new System.Drawing.Size(157, 186);
             this.lstProducts.TabIndex = 8;
             this.lstProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstProducts_MouseDoubleClick);
             // 
             // btnOrder
             // 
-            this.btnOrder.Location = new System.Drawing.Point(412, 565);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOrder.Enabled = false;
+            this.btnOrder.Location = new System.Drawing.Point(275, 367);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(104, 69);
+            this.btnOrder.Size = new System.Drawing.Size(69, 45);
             this.btnOrder.TabIndex = 9;
             this.btnOrder.Text = "Place Order";
             this.btnOrder.UseVisualStyleBackColor = true;
@@ -118,35 +119,37 @@
             // lstOrder
             // 
             this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.ItemHeight = 20;
-            this.lstOrder.Location = new System.Drawing.Point(33, 389);
-            this.lstOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstOrder.Location = new System.Drawing.Point(22, 253);
+            this.lstOrder.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(155, 244);
+            this.lstOrder.Size = new System.Drawing.Size(206, 160);
             this.lstOrder.TabIndex = 10;
+            this.lstOrder.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstOrder_MouseDoubleClick);
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(412, 500);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTotal.Location = new System.Drawing.Point(275, 325);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(112, 26);
+            this.txtTotal.Size = new System.Drawing.Size(76, 20);
             this.txtTotal.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(408, 470);
+            this.label2.Location = new System.Drawing.Point(272, 305);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Total:";
             // 
             // btnManageServers
             // 
-            this.btnManageServers.Location = new System.Drawing.Point(33, 141);
+            this.btnManageServers.Location = new System.Drawing.Point(22, 92);
+            this.btnManageServers.Margin = new System.Windows.Forms.Padding(2);
             this.btnManageServers.Name = "btnManageServers";
-            this.btnManageServers.Size = new System.Drawing.Size(135, 54);
+            this.btnManageServers.Size = new System.Drawing.Size(90, 35);
             this.btnManageServers.TabIndex = 13;
             this.btnManageServers.Text = "Manage Servers";
             this.btnManageServers.UseVisualStyleBackColor = true;
@@ -154,9 +157,10 @@
             // 
             // frmOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.btnOrder;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 692);
+            this.ClientSize = new System.Drawing.Size(458, 450);
             this.Controls.Add(this.btnManageServers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
@@ -168,7 +172,6 @@
             this.Controls.Add(this.btnDesserts);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboServer);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmOrder";
             this.Text = "Order Form";
             this.Load += new System.EventHandler(this.Form1_Load);

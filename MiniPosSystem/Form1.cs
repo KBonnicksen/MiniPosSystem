@@ -34,6 +34,9 @@ namespace MiniPosSystem
             cboServer.DisplayMember = nameof(Servers.FirstName);
         }
 
+
+
+
         /// <summary>
         /// Populates comboBox on form with product names from the 
         /// database
@@ -72,6 +75,7 @@ namespace MiniPosSystem
         {
             Servers s = cboServer.SelectedItem as Servers;
             order.Server = s;
+
         }
 
         /// <summary>
@@ -85,10 +89,43 @@ namespace MiniPosSystem
             {
                 Products newItem = (Products)lstProducts.SelectedItem;
                 order.Products.Add(newItem);
-                lstOrder.Items.Add($"{newItem.Name} - ${newItem.Price}");
+                lstOrder.Items.Add(newItem);
                 UpdateTotal();
+                if (lstOrder.Items.Count > 0)
+                {
+                    btnOrder.Enabled = true;
+                }
+                else
+                {
+                    btnOrder.Enabled = false;
+                }
             }
         }
+
+
+        /// <summary>
+        /// Deletes the selected product from the order and 
+        /// updates the total.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LstOrder_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lstOrder.SelectedIndex >= 0)
+            {
+                int current = lstOrder.SelectedIndex;
+                Products selectedProduct = lstOrder.SelectedItem as Products;
+                order.Products.Remove(selectedProduct);
+                UpdateTotal();
+                lstOrder.Items.RemoveAt(current);
+
+                if (lstOrder.Items.Count <= 0)
+                {
+                    btnOrder.Enabled = false;
+                }
+            }
+        }
+
 
         /// <summary>
         /// Updates the total textbox on the form
@@ -98,11 +135,26 @@ namespace MiniPosSystem
             txtTotal.Text = "$" + order.Price.ToString();
         }
 
+
+
+
         private void BtnOrder_Click(object sender, EventArgs e)
         {
-            frmPayment payment = new frmPayment(order);
-            payment.Show();
+            if (lstOrder.Items.Count < 0)
+            {
+                MessageBox.Show("Please order an item");
+            }
+            else
+            {
+                frmPayment payment = new frmPayment(order);
+                payment.Show();
+            }
+            
         }
+
+
+
+
 
         private void BtnManageServers_Click(object sender, EventArgs e)
         {
@@ -111,5 +163,7 @@ namespace MiniPosSystem
 
             frm.ShowDialog();
         }
+
+        
     }
 }

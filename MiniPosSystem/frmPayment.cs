@@ -37,30 +37,114 @@ namespace MiniPosSystem
         {
             grpCardInfo.Visible = true;
             grpCashPayment.Visible = false;
+
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (radCard.Checked)
+            if (radCard.Checked && IsValidCard(txtCardNumber) )
             {
                 AddNewCard();
+
+            }
+            else if(radCash.Checked && IsValidInput(txtCashGiven))
+            {
+                TransactionsDB.AddTransaction(order);
+                decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
+                txtChange.Text = $"{ cashGiven - order.Price }";
+                MessageBox.Show("Thank you for dining with us!");
+                ActiveForm.Close();
             }
 
-            TransactionsDB.AddTransaction(order);
-            MessageBox.Show("Thank you for dining with us!");
-            ActiveForm.Close();
+            btnSubmit.Enabled = true;
+
         }
+
+
+        /// <summary>
+        /// Returns true if valid information is given
+        /// </summary>
+        /// <returns></returns>
+        private Boolean IsValidCard(TextBox input)
+        {
+            try
+            {
+                if ( string.IsNullOrWhiteSpace(input.Text) ||
+                     string.IsNullOrWhiteSpace(input.Text) ||
+                    cboCardType.SelectedItem == null)
+                {
+                    btnSubmit.Enabled = false;
+                    MessageBox.Show("Please fill out every entry");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                //MessageBox.Show("Please enter valid information");
+                return false;
+            }
+
+            btnSubmit.Enabled = true;
+            return true;
+        }
+
+
+        /// <summary>
+        /// Returns false if no input is given or numbers are not 
+        /// present.
+        /// </summary>
+        /// <returns>False if not valid numbers</returns>
+        private Boolean IsValidInput(TextBox input)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(input.Text))
+                {
+                    btnSubmit.Enabled = false;
+                    MessageBox.Show("Please enter a cash amount");
+                    return false;
+                }
+                if (Convert.ToDecimal(txtCashGiven.Text) < order.Price)
+                {
+                    btnSubmit.Enabled = false;
+                    MessageBox.Show("Please pay the bill in its entirety!");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter numbers in decimal format (ex. 8, 8.00, 8.50)");
+                return false;
+            }
+            
+            return true;
+        }
+
+
 
         private void AddNewCard()
         {
-            PaymentInfo card = new PaymentInfo(){ 
-                CardNumber = Convert.ToUInt64(txtCardNumber.Text),
-                NameOnCard = txtCardHolder.Text,
-                CardType = cboCardType.SelectedItem.ToString()
-            };
-
-            PaymentInfoDB.AddPayment(card);
-            order.PaymentInfo = card;
+            try
+            {
+                PaymentInfo card = new PaymentInfo()
+                {
+                    CardNumber = Convert.ToUInt64(txtCardNumber.Text),
+                    NameOnCard = txtCardHolder.Text,
+                    CardType = cboCardType.SelectedItem.ToString()
+                };
+                PaymentInfoDB.AddPayment(card);
+                order.PaymentInfo = card;
+                // add order
+                TransactionsDB.AddTransaction(order);
+                MessageBox.Show("Thank you for dining with us!");
+                ActiveForm.Close();
+            }
+            catch (FormatException)
+            {
+                btnSubmit.Enabled = false;
+                MessageBox.Show("Please enter valid information");
+            }
+            
         }
     }
 }
