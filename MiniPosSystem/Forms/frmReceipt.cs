@@ -13,6 +13,7 @@ namespace MiniPosSystem.Forms
     public partial class frmReceipt : Form
     {
         private readonly Transactions order;
+
         public frmReceipt(Transactions tran)
         {
             InitializeComponent();
@@ -21,12 +22,12 @@ namespace MiniPosSystem.Forms
 
         private void PopulateReceipt()
         {
-            lblTotal.Text = "Total: " + order.Price.ToString();
-            lblTime.Text = DateTime.Now.TimeOfDay.ToString();
+            lblTotal.Text = "Total: $" + order.Price.ToString();
             lblServer.Text = "Server: " + order.Server.FirstName;
-            lblDate.Text = DateTime.Now.Date.ToString();
+            PopulateDateInfo();
+            PopulateOrderInfo();
 
-            if(order.PaymentInfo.NameOnCard != null)
+            if (order.PaymentInfo.NameOnCard != null)
             {
                 PopulateCardInfo();
             }
@@ -36,10 +37,25 @@ namespace MiniPosSystem.Forms
             }
         }
 
+        private void PopulateOrderInfo()
+        {
+            //Populate the listbox with the names of the products
+            //they ordered along with their price
+            throw new NotImplementedException();
+        }
+
+        private void PopulateDateInfo()
+        {
+            DateTime date = DateTime.Now;
+
+            lblTime.Text = date.Hour + ":" + date.Minute;
+            lblDate.Text = date.Date.ToString();
+        }
+
         private void PopulateCashInfo()
         {
-            lblCardNameCash.Text = order.PaymentInfo.CashTendered.ToString();
-            lblChangeCard.Text = (order.PaymentInfo.CashTendered - order.Price).ToString();
+            lblCardNameCash.Text = "Cash: $" + order.PaymentInfo.CashTendered.ToString();
+            lblChangeCard.Text = "Change: $" + (order.PaymentInfo.CashTendered - order.Price).ToString();
         }
 
         private void PopulateCardInfo()
