@@ -37,4 +37,16 @@ namespace MiniPosSystem
 
         public virtual ICollection<Transactions> Transactions { get; set; }
     }
+
+    public class Beverages : Products
+    {
+    }
+
+    public class Desserts : Products
+    {
+    }
+
+    public class Entrees : Products
+    {
+    }
 }
