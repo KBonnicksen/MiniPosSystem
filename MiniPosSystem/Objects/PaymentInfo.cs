@@ -37,5 +37,11 @@ namespace MiniPosSystem
         /// ex. Visa, Mastercard, American Express
         /// </summary>
         public string CardType { get; set; }
+
+        /// <summary>
+        /// The amount of money given to the cashier as payment.
+        /// If a card was used, this value will be null
+        /// </summary>
+        public double? CashTendered { get; set; }
     }
 }
