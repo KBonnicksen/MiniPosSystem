@@ -52,7 +52,7 @@ namespace MiniPosSystem
                 TransactionsDB.AddTransaction(order);
                 decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
                 txtChange.Text = $"{ cashGiven - order.Price }";
-                MessageBox.Show("Thank you for dining with us!");
+                //MessageBox.Show("Thank you for dining with us!");
                 ActiveForm.Close();
             }
 
