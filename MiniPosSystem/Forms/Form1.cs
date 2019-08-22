@@ -34,9 +34,6 @@ namespace MiniPosSystem
             cboServer.DisplayMember = nameof(Servers.FirstName);
         }
 
-
-
-
         /// <summary>
         /// Populates comboBox on form with product names from the 
         /// database
