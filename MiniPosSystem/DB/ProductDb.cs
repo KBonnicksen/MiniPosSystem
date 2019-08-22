@@ -29,7 +29,8 @@ namespace MiniPosSystem
         {
             using (var context = new OurRestaurantModel())
             {
-                List<Products> beverages = context.Products.Where(p => p.Category == "Beverage").ToList();
+                List<Products> beverages = 
+                    new List<Products>(context.Products.OfType<Beverages>().ToList());
 
                 return beverages;
             }
@@ -39,7 +40,8 @@ namespace MiniPosSystem
         {
             using (var context = new OurRestaurantModel())
             {
-                List<Products> entrees = context.Products.Where(p => p.Category == "Entree").ToList();
+                List<Products> entrees = 
+                    new List<Products>(context.Products.OfType<Entrees>().ToList());
 
                 return entrees;
             }
@@ -49,7 +51,8 @@ namespace MiniPosSystem
         {
             using (var context = new OurRestaurantModel())
             {
-                List<Products> desserts = context.Products.Where(p => p.Category == "Dessert").ToList();
+                List<Products> desserts =
+                    new List<Products>(context.Products.OfType<Desserts>().ToList());
 
                 return desserts;
             }
