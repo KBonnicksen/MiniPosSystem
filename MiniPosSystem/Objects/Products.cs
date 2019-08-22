@@ -36,7 +36,7 @@ namespace MiniPosSystem
         public string Category { get; set; }
 
         public virtual ICollection<Transactions> Transactions { get; set; }
-    }
+    } 
 
     public class Beverages : Products
     {
