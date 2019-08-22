@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniPosSystem.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace MiniPosSystem
     public partial class frmPayment : Form
     {
         private Transactions order;
+
         public frmPayment(Transactions tran)
         {
             order = tran;
@@ -37,27 +39,37 @@ namespace MiniPosSystem
         {
             grpCardInfo.Visible = true;
             grpCashPayment.Visible = false;
-
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            if (radCard.Checked && IsValidCard(txtCardNumber) )
-            {
+            if (radCard.Checked && IsValidCard(txtCardNumber))
                 AddNewCard();
 
-            }
             else if(radCash.Checked && IsValidInput(txtCashGiven))
+                AddCashPayment();
+
+            TransactionsDB.AddTransaction(order);
+            ShowReceipt();
+            ActiveForm.Close();
+        }
+
+        private void AddCashPayment()
+        {
+            decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
+            PaymentInfo cashPayment = new PaymentInfo()
             {
-                TransactionsDB.AddTransaction(order);
-                decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
-                txtChange.Text = $"{ cashGiven - order.Price }";
-                //MessageBox.Show("Thank you for dining with us!");
-                ActiveForm.Close();
-            }
+                CardNumber = 0,
+                CashTendered = cashGiven
+            };
+            order.PaymentInfo = cashPayment;
+            txtChange.Text = $"{ cashGiven - order.Price }";
+        }
 
-            btnSubmit.Enabled = true;
-
+        private void ShowReceipt()
+        {
+            Form receipt = new frmReceipt(order);
+            receipt.ShowDialog();
         }
 
 
@@ -120,8 +132,6 @@ namespace MiniPosSystem
             return true;
         }
 
-
-
         private void AddNewCard()
         {
             try
@@ -134,17 +144,12 @@ namespace MiniPosSystem
                 };
                 PaymentInfoDB.AddPayment(card);
                 order.PaymentInfo = card;
-                // add order
-                TransactionsDB.AddTransaction(order);
-                MessageBox.Show("Thank you for dining with us!");
-                ActiveForm.Close();
             }
             catch (FormatException)
             {
                 btnSubmit.Enabled = false;
                 MessageBox.Show("Please enter valid information");
             }
-            
         }
     }
 }
