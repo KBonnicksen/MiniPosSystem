@@ -37,11 +37,13 @@ namespace MiniPosSystem.Forms
             }
         }
 
+        /// <summary>
+        /// Populates the order summary list on the receipt form
+        /// </summary>
         private void PopulateOrderInfo()
         {
-            //Populate the listbox with the names of the products
-            //they ordered along with their price
-            throw new NotImplementedException();
+            lstOrderInfo.DataSource = order.Products;
+            lstOrderInfo.DisplayMember = nameof(Products.Name) + nameof(Products.Price);
         }
 
         private void PopulateDateInfo()
