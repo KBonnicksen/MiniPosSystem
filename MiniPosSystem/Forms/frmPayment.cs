@@ -56,7 +56,7 @@ namespace MiniPosSystem
             }
             if (radCash.Checked && IsValidCashInput(txtCashGiven))
             {
-                AddCashPayment();
+                AddCashPayment(txtCashGiven.Text.Replace("$", string.Empty));
                 FinalizePayment();
             }               
         }
@@ -77,9 +77,9 @@ namespace MiniPosSystem
         /// <summary>
         /// Adds current cash payment information to the database
         /// </summary>
-        private void AddCashPayment()
+        private void AddCashPayment(string input)
         {
-            decimal cashGiven = (Convert.ToDecimal(txtCashGiven.Text));
+            decimal cashGiven = (Convert.ToDecimal(input));
             PaymentInfo cashPayment = new PaymentInfo()
             {
                 CardNumber = 0,
@@ -162,28 +162,23 @@ namespace MiniPosSystem
         /// <returns>False if not valid numbers</returns>
         private Boolean IsValidCashInput(TextBox input)
         {
+            string cashInput = txtCashGiven.Text.Replace("$", string.Empty);
             try
             {
-                if (string.IsNullOrWhiteSpace(input.Text))
+                if (string.IsNullOrWhiteSpace(cashInput))
                 {
-                    btnSubmit.Enabled = false;
-                    MessageBox.Show("Please enter a cash amount");
-                    btnSubmit.Enabled = true;
+                    DisplayErrorMessage("Please enter a cash amount");
                     return false;
                 }
-                if (Convert.ToDecimal(txtCashGiven.Text) < order.Price)
+                if (Convert.ToDecimal(cashInput) < order.Price)
                 {
-                    btnSubmit.Enabled = false;
-                    MessageBox.Show("Please pay the bill in its entirety!");
-                    btnSubmit.Enabled = true;
+                    DisplayErrorMessage("Please pay the bill in its entirety!");
                     return false;
                 }
             }
             catch (FormatException)
             {
-                btnSubmit.Enabled = false;
-                MessageBox.Show("Please enter numbers in decimal format (ex. 8, 8.00, 8.50)");
-                btnSubmit.Enabled = true;
+                DisplayErrorMessage("Please enter numbers in decimal format (ex. 8, 8.00, 8.50)");
                 return false;
             }
             return true;
