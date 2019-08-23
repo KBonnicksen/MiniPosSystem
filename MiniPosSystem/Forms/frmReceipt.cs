@@ -50,8 +50,8 @@ namespace MiniPosSystem.Forms
         {
             DateTime date = DateTime.Now;
 
-            lblTime.Text = date.Hour + ":" + date.Minute;
-            lblDate.Text = date.Date.ToString();
+            lblTime.Text = date.ToString("hh:mm tt");
+            lblDate.Text = date.ToShortDateString();
         }
 
         private void PopulateCashInfo()

@@ -146,12 +146,11 @@ namespace MiniPosSystem
         /// </summary>
         /// <param name="errorMessage"></param>
         /// <returns></returns>
-        private bool DisplayErrorMessage(string errorMessage)
+        private void DisplayErrorMessage(string errorMessage)
         {
             btnSubmit.Enabled = false;
             MessageBox.Show(errorMessage);
             btnSubmit.Enabled = true;
-            return false;
         }
 
 
