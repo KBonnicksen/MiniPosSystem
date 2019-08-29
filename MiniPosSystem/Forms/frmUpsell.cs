@@ -124,12 +124,5 @@ namespace MiniPosSystem.Forms
                 PopulateCurrentOrderList(existingOrder.Products.ToList());
             }
         }
-
-        private void LstAddToOrder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Products selectedItem = (Products)lstAddToOrder.SelectedItem;
-
-            PopulateProductsList(selectedItem.AddOnItems);
-        }
     }
 }

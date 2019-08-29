@@ -71,7 +71,6 @@
             this.lstAddToOrder.Name = "lstAddToOrder";
             this.lstAddToOrder.Size = new System.Drawing.Size(159, 116);
             this.lstAddToOrder.TabIndex = 3;
-            this.lstAddToOrder.SelectedIndexChanged += new System.EventHandler(this.LstAddToOrder_SelectedIndexChanged);
             this.lstAddToOrder.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LstAddToOrder_MouseDoubleClick);
             // 
             // lblMessage
