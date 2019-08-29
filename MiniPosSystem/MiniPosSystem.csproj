@@ -79,6 +79,12 @@
     <Compile Include="Forms\frmReceipt.Designer.cs">
       <DependentUpon>frmReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmUpsell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUpsell.Designer.cs">
+      <DependentUpon>frmUpsell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201907300319031_InitialCreate.cs" />
     <Compile Include="Migrations\201907300319031_InitialCreate.Designer.cs">
       <DependentUpon>201907300319031_InitialCreate.cs</DependentUpon>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReceipt.resx">
       <DependentUpon>frmReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUpsell.resx">
+      <DependentUpon>frmUpsell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907300319031_InitialCreate.resx">
       <DependentUpon>201907300319031_InitialCreate.cs</DependentUpon>
