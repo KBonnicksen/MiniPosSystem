@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiniPosSystem.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -143,8 +144,8 @@ namespace MiniPosSystem
             }
             else
             {
-                frmPayment payment = new frmPayment(order);
-                payment.Show();
+                frmUpsell upsell = new frmUpsell(order);
+                upsell.Show();
             }
             
         }
