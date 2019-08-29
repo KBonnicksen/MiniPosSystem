@@ -77,7 +77,7 @@ namespace MiniPosSystem.Forms
 
         private void BtnCloseForm_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
