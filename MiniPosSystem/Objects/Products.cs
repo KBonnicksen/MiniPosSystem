@@ -29,14 +29,9 @@ namespace MiniPosSystem
         /// </summary>
         public decimal Price { get; set; }
 
-        /// <summary>
-        /// The type of this product 
-        /// Ex. Dessert, Entree, Beverage
-        /// </summary>
-        public string Category { get; set; }
-
         public virtual ICollection<Transactions> Transactions { get; set; }
 
+        public List<Products> AddOnItems { get; set; }
 
         public override string ToString()
         {
@@ -46,13 +41,29 @@ namespace MiniPosSystem
 
     public class Beverages : Products
     {
+        public new List<Products> AddOnItems()
+        {
+            return ProductDb.GetProductAddOns(13, 15);
+        }
     }
 
     public class Entrees : Products
     {
+        public new List<Products> AddOnItems()
+        {
+            return ProductDb.GetProductAddOns(10, 12);
+        }
     }
 
     public class Desserts : Products
+    {
+        public new List<Products> AddOnItems()
+        {
+            return ProductDb.GetProductAddOns(15, 17);
+        }
+    }
+
+    public class AddOnItem : Products
     {
     }
 }

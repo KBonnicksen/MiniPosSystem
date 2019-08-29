@@ -100,7 +100,6 @@ namespace MiniPosSystem
             }
         }
 
-
         /// <summary>
         /// Deletes the selected product from the order and 
         /// updates the total.
@@ -133,9 +132,6 @@ namespace MiniPosSystem
             txtTotal.Text = "$" + order.Price.ToString();
         }
 
-
-
-
         private void BtnOrder_Click(object sender, EventArgs e)
         {
             if (lstOrder.Items.Count < 0)
@@ -150,10 +146,6 @@ namespace MiniPosSystem
             
         }
 
-
-
-
-
         private void BtnManageServers_Click(object sender, EventArgs e)
         {
             Servers s = (Servers)cboServer.SelectedItem;
@@ -161,7 +153,6 @@ namespace MiniPosSystem
 
             frm.ShowDialog();
         }
-
         
     }
 }

@@ -25,6 +25,16 @@ namespace MiniPosSystem
             }  
         }
 
+        public static List<Products> GetProductAddOns(int min, int max)
+        {
+            using (var context = new OurRestaurantModel())
+            {
+                List<Products> products = context.Products.Where(p => p.Id >= min && p.Id <= max).ToList();
+
+                return products;
+            }
+        }
+
         public static List<Products> GetBeverages()
         {
             using (var context = new OurRestaurantModel())

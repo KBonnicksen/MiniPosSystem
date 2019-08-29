@@ -24,7 +24,18 @@ namespace MiniPosSystem
 
                 new Beverages() { Id = 7, Name = "Lemonade", Price = Convert.ToDecimal(2) },
                 new Beverages() { Id = 8, Name = "Milk", Price = Convert.ToDecimal(1.25) },
-                new Beverages() { Id = 9, Name = "Long Island", Price = Convert.ToDecimal(7.5) }
+                new Beverages() { Id = 9, Name = "Long Island", Price = Convert.ToDecimal(7.5) },
+
+                new AddOnItem() { Id = 10, Name = "Fries", Price = Convert.ToDecimal(3.5) },
+                new AddOnItem() { Id = 11, Name = "Tater Tots", Price = Convert.ToDecimal(3.5) },
+                new AddOnItem() { Id = 12, Name = "Side Salad", Price = Convert.ToDecimal(4) },
+
+                new AddOnItem() { Id = 13, Name = "Vodka Shot", Price = Convert.ToDecimal(7) },
+                new AddOnItem() { Id = 14, Name = "Colored Straw", Price = Convert.ToDecimal(1.25) },
+                new AddOnItem() { Id = 15, Name = "Whip Cream", Price = Convert.ToDecimal(2) },
+
+                new AddOnItem() { Id = 16, Name = "Ice Cream", Price = Convert.ToDecimal(2.25) },
+                new AddOnItem() { Id = 17, Name = "Hot fudge", Price = Convert.ToDecimal(.75) },
             };
 
             context.Products.AddRange(defaultProducts);

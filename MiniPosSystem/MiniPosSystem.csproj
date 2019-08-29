@@ -113,6 +113,14 @@
     <Compile Include="Migrations\201908220413564_ProductCashToDouble.Designer.cs">
       <DependentUpon>201908220413564_ProductCashToDouble.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908292156432_newSeedData.cs" />
+    <Compile Include="Migrations\201908292156432_newSeedData.Designer.cs">
+      <DependentUpon>201908292156432_newSeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908292222259_getAddOnItems.cs" />
+    <Compile Include="Migrations\201908292222259_getAddOnItems.Designer.cs">
+      <DependentUpon>201908292222259_getAddOnItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OurRestaurantModel.cs" />
     <Compile Include="Objects\PaymentInfo.cs" />
@@ -161,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908220413564_ProductCashToDouble.resx">
       <DependentUpon>201908220413564_ProductCashToDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908292156432_newSeedData.resx">
+      <DependentUpon>201908292156432_newSeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908292222259_getAddOnItems.resx">
+      <DependentUpon>201908292222259_getAddOnItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

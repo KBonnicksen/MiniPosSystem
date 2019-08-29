@@ -14,7 +14,6 @@ namespace MiniPosSystem.Forms
     {
         private Transactions existingOrder;
 
-
         public frmUpsell(Transactions oldOrder)
         {
             existingOrder = oldOrder;
@@ -27,7 +26,6 @@ namespace MiniPosSystem.Forms
             PopulateCurrentOrderList(existingOrder.Products.ToList());
             List<Products> desserts = ProductDb.GetDesserts();
             PopulateProductsList(desserts);
-
         }
 
         /// <summary>
@@ -125,6 +123,13 @@ namespace MiniPosSystem.Forms
                 UpdateTotal();
                 PopulateCurrentOrderList(existingOrder.Products.ToList());
             }
+        }
+
+        private void LstAddToOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Products selectedItem = (Products)lstAddToOrder.SelectedItem;
+
+            PopulateProductsList(selectedItem.AddOnItems);
         }
     }
 }
