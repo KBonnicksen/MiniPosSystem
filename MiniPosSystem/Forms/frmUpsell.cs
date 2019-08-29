@@ -70,8 +70,9 @@ namespace MiniPosSystem.Forms
 
     
 
-        private void BtnAddToOrder_Click(object sender, EventArgs e)
+        private void BtnProceedToPayment_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ShowPaymentForm();
         }
 

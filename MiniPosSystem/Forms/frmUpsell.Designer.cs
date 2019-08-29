@@ -48,7 +48,7 @@
             this.btnAddToOrder.TabIndex = 1;
             this.btnAddToOrder.Text = "Proceed To Payment";
             this.btnAddToOrder.UseVisualStyleBackColor = true;
-            this.btnAddToOrder.Click += new System.EventHandler(this.BtnAddToOrder_Click);
+            this.btnAddToOrder.Click += new System.EventHandler(this.BtnProceedToPayment_Click);
             // 
             // lstProducts
             // 

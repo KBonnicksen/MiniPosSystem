@@ -69,8 +69,8 @@ namespace MiniPosSystem
         private void FinalizePayment()
         {
             TransactionsDB.AddTransaction(order);
+            this.Hide();
             ShowReceipt();
-            ActiveForm.Close();
         }
 
 

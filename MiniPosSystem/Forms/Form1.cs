@@ -145,7 +145,8 @@ namespace MiniPosSystem
             else
             {
                 frmUpsell upsell = new frmUpsell(order);
-                upsell.Show();
+                this.Hide();
+                upsell.Show();              
             }
             
         }
