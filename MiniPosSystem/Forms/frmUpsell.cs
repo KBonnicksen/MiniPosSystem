@@ -72,7 +72,7 @@ namespace MiniPosSystem.Forms
 
         private void BtnProceedToPayment_Click(object sender, EventArgs e)
         {
-            this.Hide();
+    
             ShowPaymentForm();
         }
 

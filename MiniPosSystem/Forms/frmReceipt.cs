@@ -72,5 +72,12 @@ namespace MiniPosSystem.Forms
         {
             PopulateReceipt();
         }
+
+
+
+        private void BtnCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

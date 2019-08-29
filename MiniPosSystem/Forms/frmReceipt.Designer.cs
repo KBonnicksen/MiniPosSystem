@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCloseForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -107,7 +108,7 @@
             // 
             this.lstOrderInfo.FormattingEnabled = true;
             this.lstOrderInfo.Location = new System.Drawing.Point(20, 175);
-            this.lstOrderInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstOrderInfo.Margin = new System.Windows.Forms.Padding(2);
             this.lstOrderInfo.Name = "lstOrderInfo";
             this.lstOrderInfo.Size = new System.Drawing.Size(364, 147);
             this.lstOrderInfo.TabIndex = 6;
@@ -172,11 +173,22 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "See you soon!";
             // 
+            // btnCloseForm
+            // 
+            this.btnCloseForm.Location = new System.Drawing.Point(299, 518);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseForm.TabIndex = 14;
+            this.btnCloseForm.Text = "Exit";
+            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.Click += new System.EventHandler(this.BtnCloseForm_Click);
+            // 
             // frmReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 511);
+            this.ClientSize = new System.Drawing.Size(411, 553);
+            this.Controls.Add(this.btnCloseForm);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -190,7 +202,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmReceipt";
             this.Text = "frmReceipt";
             this.Load += new System.EventHandler(this.FrmReceipt_Load);
@@ -214,5 +226,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCloseForm;
     }
 }
